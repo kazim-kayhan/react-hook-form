@@ -1,5 +1,5 @@
 // import "./App.css";
-// import { RHFYouTubeForm } from "./components/RHFYouTubeForm";
+import { RHFYouTubeForm } from "./components/RHFYouTubeForm";
 // import { YupYouTubeForm } from "./components/YupYouTubeForm";
 // import { ZodYouTubeForm } from "./components/ZodYouTubeForm";
 import { LoginForm } from "./components/MuiLoginForm";
@@ -7,10 +7,10 @@ import { LoginForm } from "./components/MuiLoginForm";
 function App() {
   return (
     <div>
-      {/* <RHFYouTubeForm /> */}
+      <RHFYouTubeForm />
       {/* <YupYouTubeForm /> */}
       {/* <ZodYouTubeForm /> */}
-      <LoginForm />
+      {/* <LoginForm /> */}
     </div>
   );
 }

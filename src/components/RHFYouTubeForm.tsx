@@ -27,7 +27,7 @@ export const RHFYouTubeForm = () => {
       );
       const data = await response.json();
       return {
-        username: "Batman",
+        username: data.username,
         email: data.email,
         channel: "",
         address: {
@@ -36,7 +36,7 @@ export const RHFYouTubeForm = () => {
         },
         age: 0,
         dob: new Date(),
-        phone: [{ number: "" }],
+        phone: [{ number: data.phone }],
       };
     },
     mode: "onTouched",
@@ -98,7 +98,7 @@ export const RHFYouTubeForm = () => {
     });
   };
 
-  // const watchUsername = watch("username");
+  // const watchUsername = watch(["username","email"]);
   useEffect(() => {
     const subscription = watch((value, { name, type }) =>
       console.log(value, name, type)
@@ -273,7 +273,7 @@ export const RHFYouTubeForm = () => {
         <button type="button" onClick={() => trigger("channel")}>
           Validate channel
         </button>
-        <button disabled={!isDirty || !isValid}>Submit</button>
+        <button disabled={!isDirty || !isValid || isSubmitting}>Submit</button>
       </form>
 
       <DevTool control={control} />
